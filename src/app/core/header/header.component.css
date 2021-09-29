@@ -1,0 +1,12 @@
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.header .logo {
+  max-height: 32px;
+}
+
+.header .title-group {
+  padding-left: 25px;
+}
