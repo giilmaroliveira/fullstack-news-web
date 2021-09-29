@@ -8,13 +8,15 @@ import { SharedModule } from './shared/modules/shared.module';
 import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { NavComponent } from './core/nav/nav.component';
+import { LoginComponent } from './core/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    NavComponent
+    NavComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,16 @@
+.login-form {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+mat-card {
+  width: 400px;
+  margin: auto;
+  text-align: center;
+}
+
+mat-form-field {
+  display: block;
+}

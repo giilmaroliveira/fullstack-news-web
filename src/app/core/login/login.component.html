@@ -1,0 +1,22 @@
+<div class="login-form">
+  <mat-card>
+    <mat-card-content>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <h2>FullStacks News</h2>
+        <mat-form-field class="full-width-input">
+          <input matInput placeholder="E-mail" formControlName="email" required>
+          <mat-error>
+            Por favor informe um endereço de e-mail válido
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width-input">
+          <input matInput type="password" placeholder="Senha" formControlName="password" required>
+          <mat-error>
+            Por favor insira uma senha válida.
+          </mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary">Login</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
