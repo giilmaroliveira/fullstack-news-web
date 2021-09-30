@@ -10,3 +10,14 @@
 .header .title-group {
   padding-left: 25px;
 }
+
+.header .logout-text {
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.header .logout {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}

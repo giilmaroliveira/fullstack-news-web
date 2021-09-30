@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { NotificationService } from 'src/app/shared/services/notification.service';
 import { AuthService } from '../_services/auth.service';
 
@@ -13,7 +14,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
-    private notificationService: NotificationService
+    private notificationService: NotificationService,
+    private router: Router
   ) {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
@@ -30,7 +32,10 @@ export class LoginComponent implements OnInit {
     this.authService.login(email, password).subscribe(response => {
       if (response.auth === false) {
         this.notificationService.error('Usuário/senha estão incorretos, verifique os dados e tente novamente!');
+        return;
       }
+      this.authService.setToken(response.token);
+      this.router.navigate(['/users']);
     });
 
   }

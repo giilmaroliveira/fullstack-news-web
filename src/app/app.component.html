@@ -1,4 +1,8 @@
-<!-- <app-header></app-header>
-<app-nav></app-nav>
-<app-footer></app-footer> -->
-<app-login></app-login>
+<div *ngIf="authService.checkAuthenticated(); else notAuthenticated">
+  <app-header></app-header>
+  <app-nav></app-nav>
+  <app-footer></app-footer>
+</div>
+<ng-template #notAuthenticated>
+  <app-login></app-login>
+</ng-template>
