@@ -2,3 +2,11 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* SnackBar */
+.success-snackbar { background-color: #2e7d32 !important; }
+.warning-snackbar { background-color: #ff8f00 !important; }
+.error-snackbar { background-color: #c62828 !important; }
+.mat-simple-snackbar { color: #ffffff; }
+.mat-button-wrapper { color: #ffffff; }
+/* SnackBar */
