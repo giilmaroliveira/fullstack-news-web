@@ -16,7 +16,6 @@ export class UsersService {
   constructor(private http: HttpClient, private authService: AuthService) { }
 
   getAll(): Observable<BaseResponse<User[]>> {
-    const token = this.authService.getToken();
-    return this.http.get<BaseResponse<User[]>>(this.baseUrl, { headers: { 'x-access-token': token }});
+    return this.http.get<BaseResponse<User[]>>(this.baseUrl);
   }
 }
