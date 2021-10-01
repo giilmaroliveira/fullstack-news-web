@@ -18,4 +18,23 @@ export class UsersService {
   getAll(): Observable<BaseResponse<User[]>> {
     return this.http.get<BaseResponse<User[]>>(this.baseUrl);
   }
+
+  delete(id: string): Observable<BaseResponse<any>> {
+    const url = `${this.baseUrl}/${id}`;
+    return this.http.delete<BaseResponse<any>>(url);
+  }
+
+  create(user: User): Observable<BaseResponse<User>> {
+    return this.http.post<BaseResponse<User>>(this.baseUrl, JSON.stringify(user));
+  }
+
+  getById(id: string): Observable<BaseResponse<User>> {
+    const url = `${this.baseUrl}/${id}`;
+    return this.http.get<BaseResponse<User>>(url);
+  }
+
+  update(id: string, user: User): Observable<BaseResponse<User>> {
+    const url = `${this.baseUrl}/${id}`;
+    return this.http.put<BaseResponse<User>>(url, JSON.stringify(user));
+  }
 }

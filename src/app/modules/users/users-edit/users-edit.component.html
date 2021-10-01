@@ -1,0 +1,30 @@
+<mat-card>
+  <mat-card-title>{{ userId !== '' ? 'Editar Usuário' : 'Novo Usuário' }}</mat-card-title>
+
+  <form [formGroup]="usersForm" novalidate>
+    <mat-form-field>
+      <input matInput placeholder="Nome" formControlName="name" name="name" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Sobrenome" formControlName="lastname" name="lastname" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="E-mail" formControlName="email" name="email" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Senha" type="password" formControlName="password" name="password" />
+    </mat-form-field>
+
+  </form>
+
+  <button mat-raised-button (click)="save()" color="primary">
+    Salvar
+  </button>
+
+  <button mat-raised-button (click)="returnToUsersPage()" color="warn">
+    Cancelar
+  </button>
+</mat-card>
