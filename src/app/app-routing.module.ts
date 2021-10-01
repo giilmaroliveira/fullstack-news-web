@@ -12,7 +12,12 @@ const routes: Routes = [
     path: 'users',
     canActivate: [AuthGuardService],
     loadChildren: () => import('./modules/users/users.module').then(m => m.UsersModule)
-  }
+  },
+  {
+    path: 'news',
+    canActivate: [AuthGuardService],
+    loadChildren: () => import('./modules/news/news.module').then(m => m.NewsModule)
+  },
 ];
 
 @NgModule({

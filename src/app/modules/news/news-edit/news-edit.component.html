@@ -1,0 +1,35 @@
+<mat-card>
+  <mat-card-title>{{ newsId === '' ? 'Nova notícia' : 'Editar notícia' }}</mat-card-title>
+
+  <form [formGroup]="newsForm" novalidate>
+    <mat-form-field>
+      <input matInput placeholder="Título" formControlName="title" name="title" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Subtítulo" formControlName="subtitle" name="subtitle" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput placeholder="Conteúdo" formControlName="content" name="content"></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Imagem" formControlName="image" name="image" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="Categorias" formControlName="categories" multiple>
+        <mat-option *ngFor="let category of categoriesList" [value]="category._id">{{category.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+
+  <button mat-raised-button (click)="save()" color="primary">
+    {{ newsId === '' ? 'Adicionar' : 'Atualizar'}}
+  </button>
+
+  <button mat-raised-button (click)="returnToMainPage()" color="warn">
+    Cancelar
+  </button>
+</mat-card>
