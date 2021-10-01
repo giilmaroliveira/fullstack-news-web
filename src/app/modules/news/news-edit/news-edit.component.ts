@@ -100,11 +100,6 @@ export class NewsEditComponent implements OnInit {
   }
 
   create() {
-
-    // TODO: Remover Mocks
-    this.newsModel.userCreate = { _id: '1', name: 'Gilmar Oliveira'};
-    this.newsModel.state = 'pending_approval';
-
     this.newsService.create(this.newsModel).subscribe(response => {
       this.returnToMainPage();
     });
