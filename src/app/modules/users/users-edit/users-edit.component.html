@@ -14,9 +14,19 @@
       <input matInput placeholder="E-mail" formControlName="email" name="email" />
     </mat-form-field>
 
-    <div *ngIf="false">
+    <mat-form-field>
+      <mat-select placeholder="Perfil" formControlName="profile">
+        <mat-option *ngFor="let profile of profilesList" [value]="profile._id">{{profile.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div *ngIf="userId === ''">
       <mat-form-field>
         <input matInput placeholder="Senha" type="password" formControlName="password" name="password" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Confirme sua senha" type="password" formControlName="confirmPassword" name="confirmPassword" />
       </mat-form-field>
     </div>
 

@@ -25,7 +25,7 @@ export class HttpRequestInterceptor implements HttpInterceptor {
 
     return next.handle(request).pipe(catchError(err => {
       if (err instanceof HttpErrorResponse) {
-        if (err.status === 500) {
+        if (err.status === 500 || err.status === 400) {
           this.notificationService.warning('Erro interno, contate o suporte');
         }
       }
