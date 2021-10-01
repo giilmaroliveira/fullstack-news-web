@@ -36,4 +36,8 @@ export class AuthService {
   logout(): void {
     sessionStorage.removeItem(this.keyAccessToken);
   }
+
+  renew(): Observable<Auth> {
+    return this.http.post<Auth>(`${this.baseUrl}auth/renew`, {});
+  }
 }
