@@ -1,0 +1,17 @@
+<mat-card>
+  <mat-card-title>{{ profileId !== '' ? 'Editar Perfil' : 'Novo Perfil' }}</mat-card-title>
+
+  <form [formGroup]="profileForm" novalidate>
+    <mat-form-field>
+      <input matInput placeholder="Nome" formControlName="name" name="name" />
+    </mat-form-field>
+  </form>
+
+  <button mat-raised-button (click)="save()" color="primary">
+    Salvar
+  </button>
+
+  <button mat-raised-button (click)="returnToProfilesPage()" color="warn">
+    Cancelar
+  </button>
+</mat-card>

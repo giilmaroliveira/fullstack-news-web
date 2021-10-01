@@ -14,9 +14,11 @@
       <input matInput placeholder="E-mail" formControlName="email" name="email" />
     </mat-form-field>
 
-    <mat-form-field>
-      <input matInput placeholder="Senha" type="password" formControlName="password" name="password" />
-    </mat-form-field>
+    <div *ngIf="false">
+      <mat-form-field>
+        <input matInput placeholder="Senha" type="password" formControlName="password" name="password" />
+      </mat-form-field>
+    </div>
 
   </form>
 

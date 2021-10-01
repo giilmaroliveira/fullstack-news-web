@@ -25,7 +25,7 @@ export class UsersEditComponent implements OnInit {
       lastname: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['']
-    })
+    });
   }
 
   ngOnInit(): void {
