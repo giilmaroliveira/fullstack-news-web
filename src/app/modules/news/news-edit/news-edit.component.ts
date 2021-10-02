@@ -60,7 +60,7 @@ export class NewsEditComponent implements OnInit {
   }
 
   createForm(news: News) {
-    const categories = news.categories?.length > 0 ? news.categories.map(x => x._id) : [];
+    const categories = news.categories != null && news.categories.length > 0 ? news.categories.map(x => x._id) : [];
 
     const formData = {
       title: news.title,
