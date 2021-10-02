@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "rtl": "webpack --config webpack-rtl.config.js",
+    "heroku-postbuild": "ng build --prod"
   },
   "private": true,
   "dependencies": {
